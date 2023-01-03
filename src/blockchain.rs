@@ -98,7 +98,7 @@ impl Chain {
         block.count = block.transactions.len() as u32;
         block.header.merkle = Chain::get_merkle(block.transactions.clone());
         Chain::proof_of_work(&mut block.header);
-        println!("{:?}", &block);
+        println!("{:#?}", &block);
         self.chain.push(block);
         true
     }
